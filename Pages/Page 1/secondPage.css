@@ -88,7 +88,7 @@ h1{
 }
 
 .beauti::before{
-    content: "BEAUTIFUL!!!!!!";
+    content: "CHATPATII!!!!!!";
     position: absolute;
     width: 0%;
     height: 100%;
@@ -98,7 +98,7 @@ h1{
     animation: slidein infinite 1.5s;
 }
 .gorg::before{
-    content: "GORGEOUS!!!!!!";
+    content: "RASMALAIII!!!!!!";
     position: absolute;
     width: 0%;
     height: 100%;
@@ -109,7 +109,7 @@ h1{
     animation-direction: reverse;
 }
 .wow::before{
-    content: "WOWWWW!!!!!!";
+    content: "PUMPKINNN HEAD!!!!!!";
     position: absolute;
     width: 0%;
     height: 100%;
