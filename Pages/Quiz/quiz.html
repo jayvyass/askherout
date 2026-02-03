@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our memories 💕</title>
+    <link rel="icon" href="../Assets/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../cursor.css" />
+    <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+    <div class="quiz-bg" style="background-image: url('../Assets/wall6.gif');" aria-hidden="true"></div>
+
+    <div class="quiz-wrap" id="quizWrap">
+        <div class="quiz-deco">
+            <img id="quizGif" src="../Assets/smart.gif" alt="">
+        </div>
+        <p class="quiz-progress" id="progress">Question 1 of 3</p>
+        <h2 class="quiz-question" id="question"></h2>
+        <div class="quiz-options" id="options"></div>
+    </div>
+
+    <div class="quiz-error" id="errorBox">
+        <img class="quiz-error-gif" src="../Assets/depressed.gif" alt="">
+        <p class="quiz-error-msg" id="errorMsg">Oops! That’s not quite right, baby 🥺 Try again!</p>
+        <button type="button" class="btn-quiz-back" onclick="hideError()">Try again 💕</button>
+    </div>
+
+    <div class="watermark">Made by JV with 🫶🏽</div>
+
+    <script src="../../cursor.js"></script>
+    <script src="quiz.js"></script>
+</body>
+</html>

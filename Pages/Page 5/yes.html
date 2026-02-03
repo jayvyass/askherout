@@ -6,6 +6,7 @@
     <title>I love you too! 💕</title>
     <link rel="icon" href="../Assets/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../cursor.css" />
     <link rel="stylesheet" href="yes.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,18 +15,57 @@
 <body>
     <div class="yes-bg"></div>
     <div class="yes-container">
-        <div class="yes-gifs">
-            <img src="../Assets/hug.gif" class="yes-main-gif" alt="">
-            <img src="../Assets/love.gif" class="yes-side-gif yes-side-gif--1" alt="">
-            <img src="../Assets/kiss.gif" class="yes-side-gif yes-side-gif--2" alt="">
-        </div>
+        <img src="../Assets/hug.gif" class="yes-hero-gif" alt="">
+        <img src="../Assets/kiss.gif" class="yes-side-deco yes-side-deco--l" alt="">
+        <img src="../Assets/love.gif" class="yes-side-deco yes-side-deco--r" alt="">
         <h1 class="yes-title">I love youuuuu <br>tooooo my dobuuu !</h1>
-        <div class="heart-container container" aria-hidden="true"></div>
+        <p class="yes-subtitle">Open your gifts, baby 💕</p>
+
+        <div class="gifts-row">
+            <div class="gift-box" data-gift="1">
+                <div class="gift-lid"></div>
+                <div class="gift-body">
+                    <span class="gift-ribbon gift-ribbon--v"></span>
+                    <span class="gift-ribbon gift-ribbon--h"></span>
+                    <span class="gift-bow">🎀</span>
+                </div>
+                <div class="gift-label">1</div>
+            </div>
+            <div class="gift-box" data-gift="2">
+                <div class="gift-lid"></div>
+                <div class="gift-body">
+                    <span class="gift-ribbon gift-ribbon--v"></span>
+                    <span class="gift-ribbon gift-ribbon--h"></span>
+                    <span class="gift-bow">🎀</span>
+                </div>
+                <div class="gift-label">2</div>
+            </div>
+            <div class="gift-box" data-gift="3">
+                <div class="gift-lid"></div>
+                <div class="gift-body">
+                    <span class="gift-ribbon gift-ribbon--v"></span>
+                    <span class="gift-ribbon gift-ribbon--h"></span>
+                    <span class="gift-bow">🎀</span>
+                </div>
+                <div class="gift-label">3</div>
+            </div>
+        </div>
+
+        <div class="gift-modal" id="giftModal">
+            <div class="gift-modal-backdrop" onclick="closeGift()"></div>
+            <div class="gift-modal-content" id="giftModalContent">
+                <button type="button" class="gift-modal-close" onclick="closeGift()">×</button>
+                <div class="gift-modal-inner" id="giftModalInner"></div>
+            </div>
+        </div>
     </div>
 
+    <div class="heart-container container" aria-hidden="true"></div>
     <div class="watermark">Made by JV with 🫶🏽</div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
     <script src="yes_anime.js"></script>
     <script src="yes.js"></script>
+    <script src="../../cursor.js"></script>
 </body>
 </html>

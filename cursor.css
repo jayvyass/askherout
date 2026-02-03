@@ -1,0 +1,48 @@
+/* ===== Pink cursor + heart trail ===== */
+* {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='%23ff6b9d'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") 14 14, auto;
+}
+
+a, button, [role="button"], input[type="submit"], input[type="button"] {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='%23e84393'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") 14 14, pointer;
+}
+
+.heart-trail {
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  background: var(--cute-rose, #ff6b9d);
+  transform: rotate(45deg);
+  transform-origin: center;
+  pointer-events: none;
+  z-index: 9999;
+  margin-left: -7px;
+  margin-top: -7px;
+  animation: heart-fade 0.9s ease-out forwards;
+  box-shadow: 0 0 8px rgba(255, 107, 157, 0.5);
+}
+
+.heart-trail::before,
+.heart-trail::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 50%;
+  box-shadow: inherit;
+}
+
+.heart-trail::before { top: -50%; left: 0; }
+.heart-trail::after { top: 0; left: -50%; }
+
+@keyframes heart-fade {
+  0% {
+    opacity: 0.95;
+    transform: rotate(45deg) scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.2);
+  }
+}

@@ -3,34 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Do you love me? 💕</title>
+    <title>Will you be my Valentine? 💕</title>
     <link rel="icon" href="../Assets/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="../../cursor.css" />
     <link rel="stylesheet" href="forthPage.css" />
 </head>
-
 <body>
     <div class="proposal-bg" style="background-image: url('../Assets/wall6.gif');" aria-hidden="true"></div>
 
-    <h1 class="proposal-title">Do you love meeeeee?</h1>
+    <h1 class="proposal-title">Will you be my Valentine?</h1>
     <div class="proposal-content">
-        <img id="image" class="proposal-gif" src="../Assets/smart.gif" alt="">
+        <img src="../Assets/handsome.gif" class="proposal-deco proposal-deco--l" alt="">
+        <img id="image" class="proposal-gif" src="../Assets/love.gif" alt="">
+        <img src="../Assets/kiss.gif" class="proposal-deco proposal-deco--r" alt="">
         <div class="proposal-buttons">
-            <button type="button" class="btn-yes" onclick="yesFunction()">
+            <button type="button" class="btn-yes" id="yes" onclick="yesFunction()">
                 <span>Yes 🤭</span>
             </button>
-            <button type="button" class="btn-no" onclick="noFunction()">
+            <button type="button" class="btn-no" id="no" onmouseover="moveButton()">
                 <span>No &#128532;</span>
             </button>
-        </div>
-        <div class="floating-romantic">
-            <button type="button" class="btn-romantic" onclick="myFunction()"><span>Mmmmmmmmm</span></button>
-            <button type="button" class="btn-romantic" onclick="myFunction()"><span>Mmmmmmmm</span></button>
-            <button type="button" class="btn-romantic" onclick="myFunction()"><span>Mmmmmmmmm</span></button>
-            <button type="button" class="btn-romantic" onclick="myFunction()"><span>Mmmmmmm</span></button>
-            <button type="button" class="btn-romantic" onclick="myFunction()"><span>Mmmmmmmm</span></button>
-            <button type="button" class="btn-romantic" onclick="myFunction()"><span>Mmmmmmm</span></button>
-            <button type="button" class="btn-romantic" onclick="myFunction()"><span>Mmmmmmmmm</span></button>
         </div>
     </div>
 
@@ -38,10 +31,7 @@
         Made by JV with 🫶🏽
     </div>
 
-    <script>
-        function yesFunction() { window.location.href = "../Page 5/yes.html"; }
-        function noFunction() { window.location.href = "../Page 6/no1.html"; }
-        function myFunction() { window.location.href = "../Page 4/ask.html"; }
-    </script>
+    <script src="../../cursor.js"></script>
+    <script src="forthPage.js"></script>
 </body>
 </html>
