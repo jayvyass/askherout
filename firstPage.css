@@ -13,6 +13,19 @@ body {
   transition: background var(--transition-smooth);
 }
 
+body.intro-active .page-wrapper,
+body.intro-active .watermark {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+body:not(.intro-active) .page-wrapper,
+body:not(.intro-active) .watermark {
+  visibility: visible;
+  opacity: 1;
+}
+
 body.hovered {
   background-image: url('Pages/Assets/wall6.gif');
   background-position: center;

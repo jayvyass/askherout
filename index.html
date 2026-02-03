@@ -13,10 +13,22 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="cursor.css" />
+    <link rel="stylesheet" href="intro.css" />
     <link rel="stylesheet" href="firstPage.css" />
 </head>
 
-<body>
+<body class="intro-active">
+    <div class="intro-screen" id="introScreen">
+        <div class="stars"></div>
+        <div class="comet comet--1" aria-hidden="true"></div>
+        <div class="comet comet--2" aria-hidden="true"></div>
+        <div class="comet comet--3" aria-hidden="true"></div>
+        <div class="comet comet--4" aria-hidden="true"></div>
+        <div class="comet comet--5" aria-hidden="true"></div>
+        <div class="intro-text-wrap" id="introTextWrap"></div>
+        <button type="button" class="intro-continue" id="introContinue">Continue 💕</button>
+    </div>
+
     <div class="page-wrapper">
         <div class="floating-gif floating-gif--left" aria-hidden="true">
             <img src="Pages/Assets/window.gif" alt="">
@@ -28,7 +40,7 @@
         <main class="hero">
             <div class="hero-card">
                 <img id="image" class="hero-gif" src="Pages/Assets/sad.gif" alt="Cute character">
-                <p class="hero-text">Someone’s waiting to say hi…</p>
+                <p class="hero-text">Someone's waiting to say hi…</p>
                 <button type="button" class="btn-hero" id="hover" onclick="myFunction()" onmouseover="ChangeImage('hi'); bg();" onmouseout="ResetImage(); resetBG();">
                     <span>Hello &#128532;</span>
                 </button>
@@ -41,6 +53,7 @@
     </div>
 
     <script src="cursor.js"></script>
+    <script src="intro.js"></script>
     <script src="firstPage.js"></script>
 </body>
 </html>

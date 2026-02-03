@@ -304,6 +304,23 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.gift-letter .gift-sign {
+  text-align: right;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  font-style: italic;
+  color: #2d1b2e;
+}
+
+.gift-letter .gift-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--deep-rose);
+  display: block;
+  margin-top: 0.25rem;
+}
+
 .gift-postcard {
   text-align: center;
   font-family: var(--font-body);

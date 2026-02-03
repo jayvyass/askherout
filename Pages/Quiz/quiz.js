@@ -7,12 +7,12 @@ var questions = [
   {
     text: "Our first kiss was on which date?",
     options: ["3 Nov", "4 Nov", "5 Nov"],
-    correct: 1
+    correct: 0
   },
   {
     text: "When did you become my girlfriend?",
     options: ["21 Dec", "27 Dec", "25 Dec"],
-    correct: 1
+    correct: 0
   }
 ];
 
