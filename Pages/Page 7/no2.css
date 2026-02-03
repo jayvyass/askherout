@@ -1,51 +1,97 @@
-*{
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
-	font-family: dubai;
-}
-section{
-	position: relative;
-	min-height: 100vh;
-	background: #000;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-section h2{
-	color: #fff;
-	font-size: 5em;
-	cursor: default;
+/* ===== Page 7 – Seems like you love me... ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-section h2 span{
-    color: rgb(240, 99, 99);
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  position: relative;
 }
 
-section .btn{
-    margin: 25rem 10rem 0rem 0;
-    font-size: 30px;
+.no2-section {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #0a0a0f 0%, #1a1520 50%, #0d0a0d 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
 }
 
-.light{
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-	background: radial-gradient(circle at var(--x) var(--y) , transparent 10%, rgba(0,0,0,0.95) 20%);
+.no2-deco {
+  width: 130px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 8px 28px rgba(255, 107, 157, 0.25));
+  animation: float 2.8s ease-in-out infinite;
+}
+
+.no2-deco img {
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.no2-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3.5vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.5;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.no2-accent {
+  color: var(--cute-rose);
+  font-weight: 800;
+}
+
+.btn-no2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-pill);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.4), rgba(162, 155, 254, 0.3));
+  backdrop-filter: blur(8px);
+  color: var(--cream);
+  cursor: pointer;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.btn-no2:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 32px rgba(255, 107, 157, 0.3);
+}
+
+.light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--x) var(--y), transparent 8%, rgba(0, 0, 0, 0.92) 22%);
+  z-index: 10;
 }
 
 .watermark {
-    opacity: 0.5;
-    color: rgb(243, 214, 214);
-    position: fixed;
-    top: 95%;
-    left: 47%;
+  color: var(--blush);
+  z-index: 20;
 }
 
-.watermark a{
-    text-decoration: none;
-    color: rgb(243, 214, 214);
+.watermark a {
+  color: var(--blush);
 }

@@ -1,6 +1,6 @@
 //Setting hearts
 function hearts(){
-    const container = document.querySelector('.container');
+    const container = document.body;
     const creat = document.createElement('div');
     creat.classList.add('hearts');
     creat.innerHTML = '💓';

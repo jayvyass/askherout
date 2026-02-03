@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make it Romantic</title>
+    <title>Make it Romantic 💕</title>
     <link rel="icon" href="../Assets/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../style.css" />
     <link rel="stylesheet" href="thirdPage.css" />
 </head>
 <body>
-    <div class="containter">
-        <div class="center">
-            <button id="disable" class="btn" disabled >
+    <div class="loading-bg" style="background-image: url('../Assets/bg.gif');" aria-hidden="true"></div>
+    <div class="loading-overlay"></div>
+
+    <div class="loading-card">
+        <div class="loading-gif">
+            <img src="../Assets/window.gif" alt="">
+        </div>
+        <p class="loading-label">Getting everything ready…</p>
+        <div class="loading-buttons">
+            <button id="disable" class="btn-loading" disabled>
+                <span class="btn-loading-dots"></span>
                 <span>Loading...</span>
             </button>
-            <button id="enable" class="btn" >
-                <span>Click me</span>
+            <button id="enable" class="btn-ready">
+                <span>Click me 💖</span>
             </button>
         </div>
     </div>
 
     <div class="watermark">
-       Made by JV with 🫶🏽
+        Made by JV with 🫶🏽
     </div>
 
     <script src="thirdPage.js"></script>

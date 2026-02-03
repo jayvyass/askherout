@@ -1,52 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click No</title>
+    <title>Click Yes! 💕</title>
     <link rel="icon" href="../Assets/logo.png" type="image/x-icon">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="../../style.css" />
     <link rel="stylesheet" href="no3.css" />
-
 </head>
-
 <body>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    
-    <h1>Click on &nbsp;<span class="red"><b>YES,</b></span>&nbsp; if you really don't &nbsp;<span class="red"><b>LOVE</b></span>&nbsp; me.</h1>
-    <div class="content">    
-	    <img id="image" src="../Assets/angry.gif">
-        <div class="buttons">
-            <button type="button" class="btn btn-danger btn-lg" id="yes" onmouseover="moveButton(); " onclick="moveButton();">
+    <div class="no3-bg"></div>
+    <div class="no3-circles" aria-hidden="true">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <h1 class="no3-title">Click on <span class="no3-highlight">YES,</span> if you really don't <span class="no3-highlight">LOVE</span> me.</h1>
+    <div class="no3-content">
+        <img id="image" class="no3-gif" src="../Assets/angry.gif" alt="">
+        <div class="no3-buttons">
+            <button type="button" class="btn-no3 btn-no3--yes" id="yes" onmouseover="moveButton();" onclick="moveButton();">
                 <span>Yes 🤭</span>
             </button>
-            <button type="button" class="btn btn-danger " id="no" onclick = "noFunction()" onmouseover="ChangeImage('depressed'); bg()" onmouseout="ResetImage(); resetBG();">
+            <button type="button" class="btn-no3 btn-no3--no" id="no" onclick="noFunction()" onmouseover="ChangeImage('depressed'); bg()" onmouseout="ResetImage(); resetBG();">
                 <span>No &#128532;</span>
             </button>
         </div>
@@ -57,5 +41,4 @@
     </div>
     <script src="no3.js"></script>
 </body>
-
 </html>

@@ -3,40 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date me</title>
+    <title>Be my Valentine? 💕</title>
     <link rel="icon" href="../Assets/logo.png" type="image/x-icon">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="../../style.css" />
     <link rel="stylesheet" href="ask.css" />
 </head>
 <body>
-    <div class="wrapper">
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
+    <div class="ask-bg"></div>
+    <div class="bubbles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
     </div>
 
-    <h1>Would you like to &nbsp<span class="red"><b> DATE </b></span>&nbsp me?</h1>
-    <div class="content">    
-	    <img id="image" src="../Assets/handsome.gif">
-        <div class="buttons">
-        <button type="button" class="btn btn-danger btn-lg" id="yes" onclick = "yesFunction()" onmouseover="ChangeImage('love'); bg1();" onmouseout="ResetImage(); resetBG();">
-            <span>Yes 🤭</span>
-        </button>
-        <button type="button" class="btn btn-dark " id="no" onclick = "noFunction()" onmouseover="ChangeImage('depressed'); bg2()" onmouseout="ResetImage(); resetBG();">
-            <span>No &#128532;</span>
-        </button>
+    <div class="ask-deco ask-deco--left">
+        <img src="../Assets/kiss.gif" alt="">
+    </div>
+    <div class="ask-deco ask-deco--right">
+        <img src="../Assets/hug.gif" alt="">
+    </div>
+
+    <h1 class="ask-title">Would you like to <span class="ask-highlight">be my valentine</span> ?</h1>
+    <div class="ask-content">
+        <img id="image" class="ask-gif" src="../Assets/handsome.gif" alt="">
+        <div class="ask-buttons">
+            <button type="button" class="btn-ask btn-ask--yes" id="yes" onclick="yesFunction()" onmouseover="ChangeImage('love'); bg1();" onmouseout="ResetImage(); resetBG();">
+                <span>Yes 🤭</span>
+            </button>
+            <button type="button" class="btn-ask btn-ask--no" id="no" onclick="noFunction()" onmouseover="ChangeImage('depressed'); bg2()" onmouseout="ResetImage(); resetBG();">
+                <span>No &#128532;</span>
+            </button>
         </div>
     </div>
 

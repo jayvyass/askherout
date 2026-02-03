@@ -1,38 +1,128 @@
-.container {
-    position: relative;
-}
-  
-.center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* ===== Page 2 – Loading / Make it Romantic ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.btn{
-    cursor: pointer;
-    transition: 0.3s;
-    font-size: 20px;
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
-#disable{
-    cursor: wait;
+.loading-bg {
+  position: fixed;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
 }
 
-#enable{
-    display: none;
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(232, 67, 147, 0.4), rgba(162, 155, 254, 0.35));
+  z-index: -1;
+}
+
+.loading-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-lg);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  max-width: 380px;
+  margin: 1rem;
+}
+
+.loading-gif {
+  width: 140px;
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.15));
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.loading-gif img {
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.loading-label {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cream);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.loading-buttons {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-loading,
+.btn-ready {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  min-width: 180px;
+}
+
+.btn-loading {
+  background: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: wait;
+}
+
+.btn-loading-dots::after {
+  content: '';
+  animation: dots 1.2s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}
+
+#enable {
+  display: none;
+}
+
+.btn-ready {
+  background: linear-gradient(135deg, var(--cute-rose), var(--deep-rose));
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(232, 67, 147, 0.4);
+}
+
+.btn-ready:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 32px rgba(232, 67, 147, 0.5);
 }
 
 .watermark {
-    opacity: 0.5;
-    color: BLACK;
-    position: fixed;
-    top: 95%;
-    left: 47%;
-}
-
-a{
-    text-decoration: none;
-    color: black;
+  color: var(--blush);
 }

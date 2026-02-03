@@ -1,81 +1,153 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;   
+/* ===== Page 5 – Yes! I love you ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    display:flex ;
-    justify-content: center;
-    align-items: center;
-    background: #e80202;
-    overflow: hidden ;
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  font-family: var(--font-body);
 }
 
-img{
-    z-index: 1000;
-    padding-right: 5rem;
+.yes-bg {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #e80202 0%, #ff6b9d 40%, #ff9ecd 70%, #e84393 100%);
+  z-index: -2;
 }
 
-h1{
-    color: aliceblue;
-    text-align: center;
-    font-size: 4em;
-    z-index: 1000;
-    font-family: "Love Ya Like A Sister", cursive;
-    font-weight: 400;
-    font-style: normal;
+.yes-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.2), transparent 40%),
+              radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.15), transparent 35%);
+  pointer-events: none;
 }
 
-
-.heart{
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background: #e80202;
-    transform: rotate(45deg);
-    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2) ;
+.yes-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  z-index: 1;
 }
 
-.heart:before{
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #e80202;
-    border-radius: 50%;
-    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.1) ;
+.yes-gifs {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.heart:after{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 100%;
-    height: 100%;
-    background: #e80202 ;
-    border-radius: 50%;
-    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.1) ;
+.yes-main-gif {
+  width: min(280px, 70vw);
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2), 0 0 60px rgba(255, 255, 255, 0.2);
+  z-index: 2;
+  animation: pulse 2s ease-in-out infinite;
 }
 
-.watermark {
-    opacity: 0.5;
-    color: BLACK;
-    position: fixed;
-    top: 95%;
-    left: 45%;
+.yes-side-gif {
+  width: 80px;
+  height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 50%;
+  animation: float-side 2.5s ease-in-out infinite;
 }
 
-a{
-    text-decoration: none;
-    color: black;
+.yes-side-gif--1 {
+  left: calc(50% - 200px);
+  transform: translate(-50%, -50%);
+  animation-delay: 0s;
+}
+
+.yes-side-gif--2 {
+  left: calc(50% + 200px);
+  transform: translate(-50%, -50%);
+  animation-delay: 0.8s;
+}
+
+@keyframes float-side {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-8px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.yes-title {
+  font-family: "Love Ya Like A Sister", cursive;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(255, 255, 255, 0.3);
+  line-height: 1.4;
+  z-index: 2;
+}
+
+.heart-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  transform: rotate(45deg);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: 50%;
+  box-shadow: inherit;
+}
+
+.heart::before {
+  top: -50%;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -50%;
+}
+
+@media (max-width: 640px) {
+  .yes-side-gif {
+    width: 55px;
+  }
+
+  .yes-side-gif--1 {
+    transform: translate(-50%, -50%) translateX(-140px);
+  }
+
+  .yes-side-gif--2 {
+    transform: translate(50%, -50%) translateX(140px);
+  }
 }

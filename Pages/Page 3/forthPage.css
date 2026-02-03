@@ -1,94 +1,145 @@
+/* ===== Page 3 – Do you love me? ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-	height: 100vh;
-    overflow: hidden;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  font-family: var(--font-body);
 }
 
-h1{  
-    margin: 5rem 0 0;
-    padding-bottom: 0;
-    display: flex;
-    justify-content: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #111;
+.proposal-bg {
+  position: fixed;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.92;
 }
 
-img{
-    margin-top:0;
-    height: 400px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.proposal-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 800;
+  color: var(--cream);
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
-.buttons {
-    font-size: 35px;
-    display: flex;
-    justify-content: center;
-    margin-top: 29rem;
-    padding-top: 2rem;
-    gap: 12rem;
+.proposal-content {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
-.romantic1{
-    margin: 0;
-    position: absolute;
-    top: 5%;
-    left: 85%;
-    transform: translate(-50%, -50%);
+.proposal-gif {
+  width: min(320px, 85vw);
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft), 0 0 40px rgba(255, 107, 157, 0.2);
+  margin-bottom: 1.5rem;
+  transition: transform var(--transition-smooth);
 }
-.romantic2{
-    margin: 0;
-    position: absolute;
-    top: 15%;
-    left: 15%;
-    transform: translate(-50%, -50%);
+
+.proposal-gif:hover {
+  transform: scale(1.02);
 }
-.romantic3{
-    margin: 0;
-    position: absolute;
-    top: 35%;
-    left: 71%;
-    transform: translate(-50%, -50%);
+
+.proposal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: clamp(2rem, 8vw, 8rem);
+  flex-wrap: wrap;
+  padding: 1rem;
 }
-.romantic4{
-    margin: 0;
-    position: absolute;
-    top: 45%;
-    left: 25%;
-    transform: translate(-50%, -50%);
+
+.btn-yes,
+.btn-no {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+  min-width: 120px;
 }
-.romantic5{
-    margin: 0;
-    position: absolute;
-    top: 79%;
-    left: 79%;
-    transform: translate(-50%, -50%);
+
+.btn-yes {
+  background: linear-gradient(135deg, var(--cute-pink), var(--cute-rose));
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(255, 107, 157, 0.4);
 }
-.romantic6{
-    margin: 0;
-    position: absolute;
-    top: 75%;
-    left: 10%;
-    transform: translate(-50%, -50%);
+
+.btn-yes:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 32px rgba(255, 107, 157, 0.5);
 }
-.romantic7{
-    margin: 0;
-    position: absolute;
-    top: 95%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+.btn-no {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  color: var(--cream);
+  border: 2px solid rgba(255, 255, 255, 0.4);
 }
+
+.btn-no:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.floating-romantic {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.btn-romantic {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.7rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform var(--transition-smooth);
+}
+
+.btn-romantic:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.floating-romantic .btn-romantic:nth-child(1) { top: 8%; left: 88%; }
+.floating-romantic .btn-romantic:nth-child(2) { top: 18%; left: 12%; }
+.floating-romantic .btn-romantic:nth-child(3) { top: 38%; left: 72%; }
+.floating-romantic .btn-romantic:nth-child(4) { top: 48%; left: 22%; }
+.floating-romantic .btn-romantic:nth-child(5) { top: 82%; left: 82%; }
+.floating-romantic .btn-romantic:nth-child(6) { top: 78%; left: 8%; }
+.floating-romantic .btn-romantic:nth-child(7) { top: 96%; left: 50%; transform: translateX(-50%); }
 
 .watermark {
-    opacity: 0.5;
-    color: BLACK;
-    position: fixed;
-    top: 97%;
-    left: 47%;
+  color: var(--blush);
 }
 
-a{
-    text-decoration: none;
-    color: black;
+@media (max-width: 640px) {
+  .btn-romantic {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.5rem;
+  }
 }
