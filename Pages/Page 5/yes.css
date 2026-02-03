@@ -1,4 +1,4 @@
-/* ===== Page 5 – I love you + 3 Gifts ===== */
+/* ===== Page 5 – I love you more + 3 Gifts (modern, elegant, cute) ===== */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +15,7 @@ body {
 .yes-bg {
   position: fixed;
   inset: 0;
-  background: linear-gradient(135deg, #e80202 0%, #ff6b9d 35%, #ff9ecd 65%, #e84393 100%);
+  background: linear-gradient(165deg, #2d0a1a 0%, #4a1532 25%, #6b2d4a 50%, #3d1528 75%, #1f0a14 100%);
   z-index: -2;
 }
 
@@ -23,8 +23,10 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.25), transparent 45%),
-              radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.15), transparent 40%);
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255, 182, 193, 0.12), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(255, 105, 180, 0.08), transparent 45%),
+    radial-gradient(ellipse 50% 30% at 20% 80%, rgba(255, 182, 193, 0.06), transparent 40%);
   pointer-events: none;
 }
 
@@ -35,130 +37,133 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 1.5rem 4rem;
+  justify-content: center;
+  padding: 2.5rem 1.5rem 5rem;
   z-index: 1;
 }
 
+/* Elegant card wrapper */
+.yes-card {
+  max-width: 560px;
+  width: 100%;
+  padding: 2.5rem 2rem;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 0 80px rgba(255, 107, 157, 0.08);
+}
+
+.yes-header {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
 .yes-hero-gif {
-  width: min(200px, 50vw);
+  width: min(160px, 42vw);
   height: auto;
-  border-radius: var(--radius-lg);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2), 0 0 50px rgba(255, 255, 255, 0.2);
-  margin-bottom: 0.75rem;
-  animation: pulse 2s ease-in-out infinite;
+  border-radius: 1.25rem;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.25rem;
+  animation: yes-pulse 3s ease-in-out infinite;
 }
 
-.yes-side-deco {
-  position: absolute;
-  width: 70px;
-  height: auto;
-  border-radius: var(--radius-sm);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  top: 50%;
-  animation: yes-float 2.5s ease-in-out infinite;
-  z-index: 0;
-}
-
-.yes-side-deco--l {
-  left: 5%;
-  transform: translateY(-50%);
-  animation-delay: 0s;
-}
-
-.yes-side-deco--r {
-  right: 5%;
-  transform: translateY(-50%);
-  animation-delay: 0.6s;
-}
-
-@keyframes yes-float {
-  0%, 100% { transform: translateY(-50%); }
-  50% { transform: translateY(calc(-50% - 8px)); }
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.04); }
+@keyframes yes-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.02); opacity: 0.95; }
 }
 
 .yes-title {
-  font-family: "Love Ya Like A Sister", cursive;
-  font-size: clamp(1.75rem, 5vw, 3rem);
-  font-weight: 400;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.65rem, 4.5vw, 2.35rem);
+  font-weight: 700;
+  font-style: italic;
   color: #fff;
-  text-align: center;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), 0 0 40px rgba(255, 255, 255, 0.25);
   line-height: 1.35;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35), 0 0 40px rgba(255, 182, 193, 0.15);
+  letter-spacing: 0.02em;
 }
 
 .yes-subtitle {
   font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 2rem;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Gift boxes */
+/* Gift boxes – refined */
 .gifts-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  max-width: 900px;
+  align-items: flex-end;
 }
 
 .gift-box {
   position: relative;
-  width: 140px;
-  height: 140px;
+  width: 130px;
+  height: 130px;
   cursor: pointer;
-  transition: transform var(--transition-smooth);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .gift-box:hover {
-  transform: scale(1.08);
+  transform: scale(1.06) translateY(-4px);
+  filter: drop-shadow(0 12px 28px rgba(255, 107, 157, 0.25));
 }
 
 .gift-box.open .gift-lid {
-  transform: translateY(-100%) rotate(-5deg);
+  transform: translateY(-100%) rotate(-8deg);
 }
 
 .gift-lid {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  height: 28px;
-  background: linear-gradient(180deg, #c0392b 0%, #a93226 100%);
-  border-radius: 6px 6px 0 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 26px;
+  background: linear-gradient(180deg, #b8322a 0%, #8b2520 100%);
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
   z-index: 2;
 }
 
 .gift-body {
   position: absolute;
-  top: 24px;
-  left: 0;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  height: calc(100% - 24px);
-  background: linear-gradient(180deg, #e74c3c 0%, #c0392b 50%, #a93226 100%);
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  height: calc(100% - 22px);
+  background: linear-gradient(180deg, #c0392b 0%, #a03228 45%, #7b2520 100%);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   overflow: hidden;
 }
 
 .gift-ribbon {
   position: absolute;
-  background: linear-gradient(180deg, #fff 0%, #ffe4ec 50%, #ffc0cb 100%);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255, 228, 235, 0.9) 100%);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .gift-ribbon--v {
-  width: 20px;
+  width: 18px;
   height: 100%;
   left: 50%;
   transform: translateX(-50%);
@@ -167,7 +172,7 @@ body {
 
 .gift-ribbon--h {
   width: 100%;
-  height: 20px;
+  height: 18px;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
@@ -178,44 +183,69 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2rem;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  font-size: 1.75rem;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
   z-index: 1;
 }
 
-.gift-label {
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 28px;
-  height: 28px;
-  background: linear-gradient(135deg, var(--cute-pink), var(--cute-rose));
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.gift-caption {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1rem;
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(255, 107, 157, 0.5);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  margin-top: 0.5rem;
 }
 
-/* Gift 2 & 3 alternate colors */
+/* Gift 2 & 3 colours */
 .gift-box[data-gift="2"] .gift-lid,
 .gift-box[data-gift="2"] .gift-body {
-  background: linear-gradient(180deg, #8e44ad 0%, #6c3483 50%, #5b2c6f 100%);
+  background: linear-gradient(180deg, #6c3483 0%, #4a2355 45%, #2d1b38 100%);
 }
-.gift-box[data-gift="2"] .gift-lid { background: linear-gradient(180deg, #9b59b6 0%, #7d3c98 100%); }
+.gift-box[data-gift="2"] .gift-lid { background: linear-gradient(180deg, #8e44ad 0%, #6c3483 100%); }
 
 .gift-box[data-gift="3"] .gift-lid,
 .gift-box[data-gift="3"] .gift-body {
-  background: linear-gradient(180deg, #e84393 0%, #c0392b 50%, #a93226 100%);
+  background: linear-gradient(180deg, #a8325c 0%, #7b2945 45%, #4d1a2e 100%);
 }
-.gift-box[data-gift="3"] .gift-lid { background: linear-gradient(180deg, #ff6b9d 0%, #e84393 100%); }
+.gift-box[data-gift="3"] .gift-lid { background: linear-gradient(180deg, #c0396e 0%, #a8325c 100%); }
 
-/* Modal */
+/* Side decos – subtle */
+.yes-deco {
+  position: fixed;
+  width: 64px;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+  opacity: 0.85;
+  animation: yes-float 3s ease-in-out infinite;
+}
+
+.yes-deco img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.yes-deco--l {
+  left: 2%;
+  animation-delay: 0s;
+}
+
+.yes-deco--r {
+  right: 2%;
+  animation-delay: 0.7s;
+}
+
+@keyframes yes-float {
+  0%, 100% { transform: translateY(-50%); }
+  50% { transform: translateY(calc(-50% - 6px)); }
+}
+
+/* Modal – elegant */
 .gift-modal {
   position: fixed;
   inset: 0;
@@ -228,10 +258,10 @@ body {
 
 .gift-modal.show {
   display: flex;
-  animation: fadeIn 0.3s ease;
+  animation: modalFade 0.3s ease;
 }
 
-@keyframes fadeIn {
+@keyframes modalFade {
   from { opacity: 0; }
   to { opacity: 1; }
 }
@@ -239,28 +269,31 @@ body {
 .gift-modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
 }
 
 .gift-modal-content {
   position: relative;
-  max-width: 420px;
+  max-width: 440px;
   width: 100%;
-  max-height: 85vh;
+  max-height: 88vh;
   overflow-y: auto;
-  background: linear-gradient(180deg, #fff9fb 0%, #ffe4ec 100%);
-  border-radius: var(--radius-lg);
-  border: 3px solid var(--cute-rose);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 0 40px rgba(255, 107, 157, 0.2);
-  padding: 2rem;
-  animation: modalPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: linear-gradient(180deg, #fffbfc 0%, #fff0f4 50%, #ffe8ef 100%);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 107, 157, 0.25);
+  box-shadow: 
+    0 24px 64px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset,
+    0 0 60px rgba(255, 107, 157, 0.12);
+  padding: 2.25rem;
+  animation: modalPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 @keyframes modalPop {
   from {
     opacity: 0;
-    transform: scale(0.9) translateY(20px);
+    transform: scale(0.92) translateY(16px);
   }
   to {
     opacity: 1;
@@ -270,43 +303,45 @@ body {
 
 .gift-modal-close {
   position: absolute;
-  top: 0.75rem;
+  top: 1rem;
   right: 1rem;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border: none;
-  background: rgba(255, 107, 157, 0.2);
+  background: rgba(255, 107, 157, 0.12);
   color: var(--deep-rose);
   font-size: 1.5rem;
   line-height: 1;
   border-radius: 50%;
   cursor: pointer;
-  transition: background var(--transition-smooth);
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .gift-modal-close:hover {
-  background: rgba(255, 107, 157, 0.4);
+  background: rgba(255, 107, 157, 0.22);
+  transform: scale(1.05);
 }
 
+/* Letter / postcard / promise content */
 .gift-letter {
   font-family: var(--font-body);
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: 1.75;
   color: #2d1b2e;
   white-space: pre-line;
 }
 
 .gift-letter .greet {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.2rem;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 1.25rem;
   color: var(--deep-rose);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .gift-letter .gift-sign {
   text-align: right;
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
   margin-bottom: 0;
   font-style: italic;
   color: #2d1b2e;
@@ -315,10 +350,10 @@ body {
 .gift-letter .gift-name {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--deep-rose);
   display: block;
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;
 }
 
 .gift-postcard {
@@ -327,26 +362,26 @@ body {
 }
 
 .gift-postcard .postcard-title {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.35rem;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 1.4rem;
   color: var(--deep-rose);
-  margin-bottom: 1rem;
-  border-bottom: 2px dashed var(--cute-rose);
-  padding-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid rgba(255, 107, 157, 0.3);
 }
 
 .gift-postcard .postcard-detail {
   font-size: 1.05rem;
   color: #2d1b2e;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .gift-postcard .postcard-place {
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--cute-rose);
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
 .gift-promise {
@@ -355,19 +390,20 @@ body {
 }
 
 .gift-promise .promise-title {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.3rem;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 1.35rem;
   color: var(--deep-rose);
   margin-bottom: 1rem;
 }
 
 .gift-promise .promise-text {
   font-size: 1.05rem;
-  line-height: 1.75;
+  line-height: 1.8;
   color: #2d1b2e;
 }
 
+/* Hearts (floating) */
 .heart-container {
   position: fixed;
   inset: 0;
@@ -379,9 +415,9 @@ body {
   position: absolute;
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.85);
   transform: rotate(45deg);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .heart::before,
@@ -399,21 +435,33 @@ body {
 .heart::after { top: 0; left: -50%; }
 
 .watermark {
+  font-family: var(--font-display);
   color: var(--blush);
 }
 
 @media (max-width: 640px) {
+  .yes-card {
+    padding: 2rem 1.5rem;
+  }
+
   .gift-box {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
   }
 
   .gift-box .gift-lid {
-    height: 24px;
+    height: 22px;
   }
 
   .gift-box .gift-body {
-    top: 20px;
-    height: calc(100% - 20px);
+    top: 18px;
+    height: calc(100% - 18px);
   }
+
+  .yes-deco {
+    width: 50px;
+  }
+
+  .yes-deco--l { left: 1%; }
+  .yes-deco--r { right: 1%; }
 }
