@@ -46,23 +46,25 @@
   50% { opacity: 1; transform: scale(1.2); }
 }
 
-/* Comets */
+/* Comets – fall from top to bottom */
 .comet {
   position: absolute;
-  width: 120px;
-  height: 3px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 200, 255, 0.4) 40%, transparent 100%);
+  width: 3px;
+  height: 100px;
+  left: 10%;
+  top: -120px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 200, 255, 0.5) 30%, transparent 100%);
   border-radius: 2px;
-  animation: comet 8s linear infinite;
-  transform-origin: left center;
+  animation: comet-fall 7s linear infinite;
+  transform-origin: center top;
 }
 
 .comet::after {
   content: '';
   position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
   width: 8px;
   height: 8px;
   background: #fff;
@@ -70,16 +72,16 @@
   box-shadow: 0 0 12px #fff, 0 0 24px rgba(255, 200, 255, 0.6);
 }
 
-.comet--1 { top: 15%; left: -120px; animation-delay: 0s; }
-.comet--2 { top: 40%; left: -120px; animation-delay: 3s; transform: rotate(-5deg); }
-.comet--3 { top: 70%; left: -120px; animation-delay: 6s; transform: rotate(3deg); }
-.comet--4 { top: 25%; left: -120px; animation-delay: 4.5s; }
-.comet--5 { top: 85%; left: -120px; animation-delay: 2s; transform: rotate(-2deg); }
+.comet--1 { left: 12%; animation-delay: 0s; }
+.comet--2 { left: 28%; animation-delay: 2.5s; height: 80px; }
+.comet--3 { left: 55%; animation-delay: 5s; height: 110px; }
+.comet--4 { left: 72%; animation-delay: 1.5s; height: 90px; }
+.comet--5 { left: 88%; animation-delay: 4s; }
 
-@keyframes comet {
-  0% { transform: translateX(0) rotate(0deg); opacity: 0.8; }
-  70% { opacity: 0.6; }
-  100% { transform: translateX(calc(100vw + 120px)) rotate(0deg); opacity: 0; }
+@keyframes comet-fall {
+  0% { transform: translateY(0); opacity: 0.9; }
+  70% { opacity: 0.5; }
+  100% { transform: translateY(calc(100vh + 120px)); opacity: 0; }
 }
 
 /* Typewriter area */

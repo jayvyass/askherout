@@ -1,6 +1,7 @@
 (function() {
   var lines = [
-    "Riya.",
+    "Riya,",
+    "my cutie, my favourite person 💕",
     "I didn't just want to say I love you.",
     "I wanted to build you something only you get to see.",
     "Because you're not like everyone else — and what we have isn't either.",
@@ -67,11 +68,7 @@
 
   if (continueBtn) {
     continueBtn.addEventListener('click', function() {
-      document.getElementById('introScreen').classList.add('hidden');
-      document.body.classList.remove('intro-active');
-      setTimeout(function() {
-        document.getElementById('introScreen').style.display = 'none';
-      }, 650);
+      window.location.href = 'Pages/Page 3/forthPage.html';
     });
   }
 
