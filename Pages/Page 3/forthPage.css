@@ -12,23 +12,17 @@ body {
   font-family: var(--font-body);
 }
 
-.proposal-bg {
-  position: fixed;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-  opacity: 0.92;
-}
-
 .proposal-title {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: clamp(1.35rem, 3.5vw, 2rem);
   font-weight: 800;
-  color: var(--cream);
+  color: #fff;
   text-align: center;
   padding: 2rem 1rem 1rem;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 107, 157, 0.15);
+  min-height: 1.4em;
+  position: relative;
+  z-index: 2;
 }
 
 .proposal-content {
@@ -40,6 +34,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  z-index: 2;
 }
 
 .proposal-gif {
@@ -139,5 +134,14 @@ body {
 }
 
 .watermark {
-  color: var(--blush);
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }

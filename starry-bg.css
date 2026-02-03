@@ -1,0 +1,97 @@
+/* ===== Shared starry + comet background (like intro) ===== */
+.starry-page {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: radial-gradient(ellipse 120% 100% at 50% 0%, #1a0a2e 0%, #0d0221 45%, #05010a 100%);
+  overflow: hidden;
+}
+
+.starry-stars {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.starry-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  animation: starry-twinkle 3s ease-in-out infinite;
+}
+
+.starry-star.starry-star--big {
+  width: 3px;
+  height: 3px;
+  box-shadow: 0 0 6px #fff, 0 0 12px rgba(255, 255, 255, 0.6);
+  animation-duration: 2s;
+}
+
+@keyframes starry-twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.starry-comet {
+  position: absolute;
+  width: 3px;
+  height: 100px;
+  left: 10%;
+  top: -120px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 200, 255, 0.5) 30%, transparent 100%);
+  border-radius: 2px;
+  animation: starry-comet-fall 7s linear infinite;
+  transform-origin: center top;
+  z-index: 0;
+}
+
+.starry-comet::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #fff, 0 0 24px rgba(255, 200, 255, 0.6);
+}
+
+.starry-comet:nth-child(1) { left: 12%; animation-delay: 0s; }
+.starry-comet:nth-child(2) { left: 28%; animation-delay: 2.5s; height: 80px; }
+.starry-comet:nth-child(3) { left: 55%; animation-delay: 5s; height: 110px; }
+.starry-comet:nth-child(4) { left: 72%; animation-delay: 1.5s; height: 90px; }
+.starry-comet:nth-child(5) { left: 88%; animation-delay: 4s; }
+
+@keyframes starry-comet-fall {
+  0% { transform: translateY(0); opacity: 0.9; }
+  70% { opacity: 0.5; }
+  100% { transform: translateY(calc(100vh + 120px)); opacity: 0; }
+}
+
+/* Typewriter text – same font as comet/intro page */
+.typewriter-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 3vw, 1.45rem);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 107, 157, 0.15);
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background: var(--cute-rose);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: typewriter-blink 0.8s step-end infinite;
+}
+
+@keyframes typewriter-blink {
+  50% { opacity: 0; }
+}
