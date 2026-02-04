@@ -52,13 +52,22 @@
   function createStars() {
     var starsEl = document.querySelector('.stars');
     if (!starsEl) return;
-    var count = 80;
-    for (var i = 0; i < count; i++) {
+    var sizes = ['tiny', 'small', 'medium', 'large', 'bright'];
+    var total = 120;
+    for (var i = 0; i < total; i++) {
+      var r = Math.random();
+      var sizeClass = 'star--small';
+      if (r < 0.45) sizeClass = 'star--tiny';
+      else if (r < 0.75) sizeClass = 'star--small';
+      else if (r < 0.90) sizeClass = 'star--medium';
+      else if (r < 0.97) sizeClass = 'star--large';
+      else sizeClass = 'star--bright';
       var star = document.createElement('div');
-      star.className = 'star' + (Math.random() > 0.7 ? ' star--big' : '');
+      star.className = 'star ' + sizeClass;
       star.style.left = Math.random() * 100 + '%';
       star.style.top = Math.random() * 100 + '%';
-      star.style.animationDelay = Math.random() * 3 + 's';
+      star.style.animationDelay = (Math.random() * 4) + 's';
+      star.style.animationDuration = (2.5 + Math.random() * 2.5) + 's';
       starsEl.appendChild(star);
     }
   }
