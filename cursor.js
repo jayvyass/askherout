@@ -1,6 +1,6 @@
 (function() {
   var lastTime = 0;
-  var throttle = 40;
+  var throttle = 16;
 
   var colors = ['#ff6b9d', '#e84393', '#ff9ecd'];
   function createHeart(x, y) {

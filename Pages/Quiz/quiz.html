@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="../../cursor.css" />
     <link rel="stylesheet" href="../../starry-bg.css" />
     <link rel="stylesheet" href="quiz.css" />
+    <link rel="stylesheet" href="../Page 5/yes.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="starry-page"></div>
@@ -26,6 +30,69 @@
         <p class="quiz-progress" id="progress">Question 1 of 3</p>
         <h2 class="quiz-question typewriter-text" id="question"></h2>
         <div class="quiz-options" id="options"></div>
+    </div>
+
+    <!-- After 3 correct: typewriter message -->
+    <div class="quiz-success-wrap" id="successWrap">
+        <p class="quiz-success-msg" id="successMsg"></p>
+    </div>
+
+    <!-- Then: love image + movie-style audio -->
+    <div class="quiz-love-wrap" id="loveWrap">
+        <div class="quiz-love-bg"></div>
+        <div class="quiz-love-card">
+            <img class="quiz-love-img" src="../Assets/Lve.jpeg" alt="Love" />
+        </div>
+        <audio id="riyaAudio" preload="auto">
+            <source src="../Assets/Riyaaudio.m4a.mp4" type="audio/mp4">
+            <source src="../Assets/Riyaaudio.m4a.mp4" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Finally: 3 gifts (same as yes page) -->
+    <div class="quiz-gifts-wrap" id="giftsWrap">
+        <section class="yes-card quiz-gifts-card">
+            <div class="yes-header">
+                <h1 class="yes-title">I love you more than anyone, my baby 💕</h1>
+                <p class="yes-subtitle">Open your gifts below</p>
+            </div>
+            <div class="gifts-row">
+                <div class="gift-box" data-gift="1">
+                    <div class="gift-lid"></div>
+                    <div class="gift-body">
+                        <span class="gift-ribbon gift-ribbon--v"></span>
+                        <span class="gift-ribbon gift-ribbon--h"></span>
+                        <span class="gift-bow">🎀</span>
+                    </div>
+                    <span class="gift-caption">Letter</span>
+                </div>
+                <div class="gift-box" data-gift="2">
+                    <div class="gift-lid"></div>
+                    <div class="gift-body">
+                        <span class="gift-ribbon gift-ribbon--v"></span>
+                        <span class="gift-ribbon gift-ribbon--h"></span>
+                        <span class="gift-bow">🎀</span>
+                    </div>
+                    <span class="gift-caption">Date</span>
+                </div>
+                <div class="gift-box" data-gift="3">
+                    <div class="gift-lid"></div>
+                    <div class="gift-body">
+                        <span class="gift-ribbon gift-ribbon--v"></span>
+                        <span class="gift-ribbon gift-ribbon--h"></span>
+                        <span class="gift-bow">🎀</span>
+                    </div>
+                    <span class="gift-caption">Promise</span>
+                </div>
+            </div>
+        </section>
+        <div class="gift-modal" id="giftModal">
+            <div class="gift-modal-backdrop" id="giftModalBackdrop"></div>
+            <div class="gift-modal-content" id="giftModalContent">
+                <button type="button" class="gift-modal-close" id="giftModalClose" aria-label="Close">×</button>
+                <div class="gift-modal-inner" id="giftModalInner"></div>
+            </div>
+        </div>
     </div>
 
     <div class="quiz-error" id="errorBox">
