@@ -189,6 +189,7 @@ function playAudioMovieStyle() {
   riyaAudio.addEventListener('ended', function onEnded() {
     loveWrap.classList.remove('show');
     giftsWrap.classList.add('show');
+    startGiftTypewriter();
     initGiftModal();
   }, { once: true });
 
@@ -219,6 +220,27 @@ function initLovePlayButton() {
       fadeIn();
     });
   }, { once: true });
+}
+
+var giftTypewriterText = "Don't worry chirkut, I will always choose you 💕";
+
+function startGiftTypewriter() {
+  var el = document.getElementById('giftTypewriter');
+  if (!el) return;
+  el.innerHTML = '';
+  var i = 0;
+  var cursor = '<span class="quiz-gifts-cursor"></span>';
+
+  function typeChar() {
+    if (i <= giftTypewriterText.length) {
+      el.innerHTML = giftTypewriterText.slice(0, i) + cursor;
+      i++;
+      setTimeout(typeChar, 42);
+    } else {
+      el.textContent = giftTypewriterText;
+    }
+  }
+  typeChar();
 }
 
 function initGiftModal() {
