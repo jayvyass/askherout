@@ -125,6 +125,7 @@ function startSuccessFlow() {
     setTimeout(function () {
       successWrap.classList.remove('show');
       loveWrap.classList.add('show');
+      initLovePlayButton();
       playAudioMovieStyle();
     }, 1600);
   });
@@ -150,6 +151,7 @@ function typewriterSuccess(text, done) {
 
 function playAudioMovieStyle() {
   if (!riyaAudio) return;
+  var playBtn = document.getElementById('lovePlayBtn');
   riyaAudio.volume = 0;
   riyaAudio.currentTime = 0;
 
@@ -191,8 +193,32 @@ function playAudioMovieStyle() {
   }, { once: true });
 
   riyaAudio.play().then(function () {
+    if (playBtn) playBtn.classList.add('hidden');
     fadeIn();
-  }).catch(function () {});
+  }).catch(function () {
+    if (playBtn) playBtn.classList.remove('hidden');
+  });
+}
+
+function initLovePlayButton() {
+  var playBtn = document.getElementById('lovePlayBtn');
+  if (!playBtn || !riyaAudio) return;
+  playBtn.addEventListener('click', function () {
+    playBtn.classList.add('hidden');
+    riyaAudio.volume = 0;
+    riyaAudio.currentTime = 0;
+    riyaAudio.play().then(function () {
+      var fadeInStart = Date.now();
+      function fadeIn() {
+        var elapsed = (Date.now() - fadeInStart) / 1000;
+        if (elapsed < 2) {
+          riyaAudio.volume = Math.min(1, elapsed / 2);
+          requestAnimationFrame(fadeIn);
+        } else riyaAudio.volume = 1;
+      }
+      fadeIn();
+    });
+  }, { once: true });
 }
 
 function initGiftModal() {
